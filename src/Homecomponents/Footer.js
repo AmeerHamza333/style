@@ -1,7 +1,26 @@
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import React from 'react'
+import {useNavigate} from 'react-router-dom';
 
 export default function Footer() {
+
+  const Navigate = useNavigate();
+
+  const subsnavigate = ()=>{
+    Navigate("/signup");
+  }
+  
+const blogsnavigate = ()=>{
+  Navigate("/blogs");
+}
+
+const aboutnavigate = ()=>{
+  Navigate("/about");
+}
+
+const contactnavigate = ()=>{
+  Navigate("/contact");
+}
   return (
 <footer id="footer" className="footer-1">
 <div className="main-footer widgets-dark typo-light">
@@ -22,14 +41,20 @@ ST<span style={{fontSize: "2.3rem", color: "orange", fontFamily: "Tapestry"}}> Y
 <h5 className="widget-title">Quick Links<span></span></h5>
 <ul className="thumbnail-widget">
 <li>
-<div className="thumb-content"><a href="/blogs">Blogs</a></div> 
+<Button onClick={blogsnavigate}   style={{width: "80px", color: "orange", display: "flex", alignItems: "center"}}>
+Blogs
+</Button>
 </li>
 <li>
-<div className="thumb-content"><a href="/about">About</a></div> 
+<Button onClick={aboutnavigate}   style={{width: "80px", color: "orange", display: "flex", alignItems: "center"}}>
+About
+</Button>
 </li>
 
 <li>
-<div className="thumb-content"><a href="/contact">Contact</a></div>  
+<Button onClick={contactnavigate}   style={{width: "80px", color: "orange", display: "flex", alignItems: "center"}}>
+Contact
+</Button> 
 </li>
 
 </ul>
@@ -40,7 +65,9 @@ ST<span style={{fontSize: "2.3rem", color: "orange", fontFamily: "Tapestry"}}> Y
 <div className="widget no-box" style={{paddingRight: "10%"}}>
 <h5 className="widget-title">Get Started<span></span></h5>
 <p style={{fontFamily: "Barlow"}}>Get Access to shopping that you want now</p>
-<a className="btn" href="/signup" >Subscribe Now</a>
+<Button onClick={subsnavigate} variant="contained"  style={{width: "150px", backgroundColor: "orange", display: "flex", justifyContent: "center", alignItems: "center"}}>
+Subscribe Now
+</Button>
 </div>
 </div>
 
